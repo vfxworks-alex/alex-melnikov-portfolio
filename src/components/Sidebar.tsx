@@ -23,9 +23,11 @@ type SectionProps = {
 const clientMarqueeCopies = [false, true] as const;
 
 function Section({ title, children }: SectionProps) {
+  const titleId = `${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}-title`;
+
   return (
-    <section className="profile-section" aria-labelledby={`${title.toLowerCase()}-title`}>
-      <h2 id={`${title.toLowerCase()}-title`}>{title}</h2>
+    <section className="profile-section" aria-labelledby={titleId}>
+      <h2 id={titleId}>{title}</h2>
       {children}
     </section>
   );
@@ -34,7 +36,6 @@ function Section({ title, children }: SectionProps) {
 function LogoMarquee() {
   return (
     <section className="client-slab" aria-label="Selected client logos">
-      <p className="client-slab__label">Selected Clients</p>
       <div className="client-marquee">
         <div className="client-track">
           {clientMarqueeCopies.map((isDuplicate) => (
@@ -69,8 +70,8 @@ function Overview() {
             height="400"
           />
           <div>
-            <p className="eyebrow">{profile.role}</p>
             <h1>{profile.name}</h1>
+            <p className="identity-role">{profile.role}</p>
           </div>
         </div>
 
@@ -91,7 +92,7 @@ function Overview() {
 
       <LogoMarquee />
 
-      <Section title="About">
+      <Section title="About me.">
         <p>{profile.about}</p>
         <dl className="stats-list">
           {profile.stats.map((stat) => (
@@ -103,7 +104,7 @@ function Overview() {
         </dl>
       </Section>
 
-      <Section title="Services">
+      <Section title="Services.">
         <div className="service-list">
           {services.map((service) => (
             <article key={service.title}>
@@ -114,7 +115,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Stack">
+      <Section title="Stack.">
         <div className="tag-cloud" aria-label="Tools">
           {stack.map((tool) => (
             <span key={tool}>{tool}</span>
@@ -122,7 +123,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Experience">
+      <Section title="Experience.">
         <div className="timeline-list">
           {experience.map((item) => (
             <article key={`${item.company}-${item.years}`}>
@@ -135,7 +136,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Testimonials">
+      <Section title="Testimonials.">
         <div className="testimonial-list">
           {testimonials.map((testimonial) => (
             <figure key={testimonial.name}>
@@ -152,7 +153,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Reach Out">
+      <Section title="Reach out.">
         <div className="contact-list">
           {contacts.map((contact) => (
             <a href={contact.href} key={contact.label}>
