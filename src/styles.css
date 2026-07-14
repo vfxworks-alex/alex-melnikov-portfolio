@@ -266,24 +266,43 @@ h3 {
   text-transform: uppercase;
 }
 
+.client-marquee {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.client-track {
+  display: flex;
+  width: max-content;
+  animation: client-marquee 24s linear infinite;
+  will-change: transform;
+}
+
 .client-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.68rem 0.78rem;
+  --client-gap: clamp(1.6rem, 6cqi, 2.8rem);
+  display: flex;
+  flex: none;
+  gap: var(--client-gap);
   align-items: center;
+  padding-right: var(--client-gap);
 }
 
 .logo-word {
-  min-width: 0;
+  flex: none;
   color: rgba(17, 17, 17, 0.46);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(0.88rem, 3.15cqi, 1.04rem);
   font-weight: 700;
   line-height: 1;
-  overflow: hidden;
-  text-align: left;
-  text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@keyframes client-marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .profile-section {
@@ -982,6 +1001,21 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .client-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .client-track {
+    animation: none !important;
+    transform: none;
+  }
+
+  .client-grid[aria-hidden="true"] {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {

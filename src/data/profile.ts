@@ -19,14 +19,14 @@ export const profile = {
 };
 
 export const clients = [
-  "NOVA",
-  "KITE",
-  "AURA",
-  "MONO",
-  "INDEX",
-  "ORBIT",
-  "FRAME",
-  "LUMEN",
+  "Pixel Point",
+  "SCALE",
+  "MTS",
+  "VK",
+  "ENDY",
+  "WELLSPIN",
+  "Wonder Family",
+  "ojingo",
 ];
 
 export const services = [

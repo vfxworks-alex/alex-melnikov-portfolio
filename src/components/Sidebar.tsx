@@ -20,6 +20,8 @@ type SectionProps = {
   children: ReactNode;
 };
 
+const clientMarqueeCopies = [false, true] as const;
+
 function Section({ title, children }: SectionProps) {
   return (
     <section className="profile-section" aria-labelledby={`${title.toLowerCase()}-title`}>
@@ -33,12 +35,22 @@ function LogoMarquee() {
   return (
     <section className="client-slab" aria-label="Selected client logos">
       <p className="client-slab__label">Selected Clients</p>
-      <div className="client-grid">
-        {clients.map((client) => (
-          <span className="logo-word" key={client}>
-            {client}
-          </span>
-        ))}
+      <div className="client-marquee">
+        <div className="client-track">
+          {clientMarqueeCopies.map((isDuplicate) => (
+            <div
+              className="client-grid"
+              aria-hidden={isDuplicate ? true : undefined}
+              key={isDuplicate ? "duplicate" : "primary"}
+            >
+              {clients.map((client) => (
+                <span className="logo-word" key={client}>
+                  {client}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
