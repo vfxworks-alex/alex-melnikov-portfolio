@@ -249,20 +249,22 @@ h3 {
 
 .client-slab {
   display: grid;
-  gap: 0.72rem;
+  gap: 0.9rem;
   border-bottom: 1px solid var(--line);
-  padding: clamp(1rem, 1.45vw, 1.35rem) clamp(1.1rem, 1.65vw, 1.55rem);
+  padding: clamp(1.1rem, 1.55vw, 1.45rem) clamp(1.1rem, 1.65vw, 1.55rem);
   background:
     linear-gradient(180deg, rgba(17, 17, 17, 0.018), transparent 58%),
     var(--bg);
 }
 
 .client-slab__label {
-  color: var(--muted);
-  font-size: 0.66rem;
-  font-weight: 780;
-  letter-spacing: 0;
+  width: 100%;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 0.64rem;
+  font-weight: 760;
+  letter-spacing: 0.13em;
   line-height: 1;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -291,11 +293,13 @@ h3 {
 
 .logo-word {
   flex: none;
-  color: rgba(17, 17, 17, 0.46);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(0.88rem, 3.15cqi, 1.04rem);
-  font-weight: 700;
+  color: rgba(17, 17, 17, 0.45);
+  font-family: inherit;
+  font-size: clamp(0.78rem, 2.8cqi, 0.94rem);
+  font-weight: 740;
+  letter-spacing: 0.08em;
   line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
