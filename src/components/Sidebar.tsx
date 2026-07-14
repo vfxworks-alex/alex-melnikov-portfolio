@@ -35,7 +35,7 @@ function Section({ title, children }: SectionProps) {
 
 function LogoMarquee() {
   return (
-    <section className="client-slab" aria-label="Selected client logos">
+    <div className="client-slab" role="group" aria-label="Selected client logos">
       <div className="client-marquee">
         <div className="client-track">
           {clientMarqueeCopies.map((isDuplicate) => (
@@ -53,7 +53,7 @@ function LogoMarquee() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -85,12 +85,13 @@ function Overview() {
           {profile.availability}
         </div>
 
-        <a className="primary-action" href={`mailto:${profile.email}`}>
-          Get in touch
-        </a>
+        <div className="intro-actions">
+          <a className="primary-action" href={`mailto:${profile.email}`}>
+            Get in touch
+          </a>
+          <LogoMarquee />
+        </div>
       </section>
-
-      <LogoMarquee />
 
       <Section title="About me.">
         <p>{profile.about}</p>
