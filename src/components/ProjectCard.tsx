@@ -10,7 +10,7 @@ type ProjectCardProps = {
 export function ProjectCard({ project, index, isSelected, onSelect }: ProjectCardProps) {
   return (
     <article
-      className={`project-card project-card--${project.size}${isSelected ? " is-selected" : ""}`}
+      className={`project-card project-card--size-${project.size} project-card--aspect-${project.videoAspect ?? "square"}${isSelected ? " is-selected" : ""}`}
       style={{ animationDelay: `${index * 70}ms` }}
     >
       <button

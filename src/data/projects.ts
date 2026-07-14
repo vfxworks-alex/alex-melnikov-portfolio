@@ -53,9 +53,10 @@ export const projects: Project[] = [
     tools: ["After Effects", "Cinema 4D"],
     description:
       "A compact launch loop built around product scale, soft reflections, and a calm camera move that makes the object feel tangible.",
-    size: "tall",
+    size: "wide",
     poster: "/media/posters/kima-crops/pulse.png",
     previewVideo: "/media/videos/smart-speaker.mp4",
+    videoAspect: "wide",
   },
   {
     id: "keyboard",
@@ -81,7 +82,7 @@ export const projects: Project[] = [
     tools: ["After Effects", "Photoshop"],
     description:
       "A compact brand animation package with bold timing, simple staging, and enough contrast to survive small placements.",
-    size: "standard",
+    size: "tall",
     poster: "/media/posters/kima-crops/scarlet.png",
     previewVideo: "/media/videos/stash.mp4",
     fullVideo: "/media/videos/stash-full.mp4",
@@ -96,7 +97,7 @@ export const projects: Project[] = [
     tools: ["After Effects"],
     description:
       "A clean circular motion experiment with loopable timing and simple high-contrast composition.",
-    size: "standard",
+    size: "tall",
     poster: "/media/posters/kima-crops/eclipse.png",
     previewVideo: "/media/videos/ae-circle.mp4",
     fullVideo: "/media/videos/ae-circle-full.mp4",
@@ -114,6 +115,7 @@ export const projects: Project[] = [
     size: "standard",
     poster: "/media/posters/kima-crops/nova.png",
     previewVideo: "/media/videos/camera.mp4",
+    videoAspect: "square",
   },
   {
     id: "button",
@@ -124,9 +126,10 @@ export const projects: Project[] = [
     tools: ["Cinema 4D", "After Effects"],
     description:
       "A short tactile study that sells click, pressure, and surface detail through timing rather than noise.",
-    size: "wide",
+    size: "standard",
     poster: "/media/posters/kima-crops/ember.png",
     previewVideo: "/media/videos/button.mp4",
+    videoAspect: "square",
   },
   {
     id: "blue",
@@ -140,6 +143,7 @@ export const projects: Project[] = [
     size: "standard",
     poster: "/media/posters/kima-crops/eclipse.png",
     previewVideo: "/media/videos/blue.mp4",
+    videoAspect: "square",
   },
   {
     id: "zjglka",
@@ -150,9 +154,10 @@ export const projects: Project[] = [
     tools: ["After Effects", "Photoshop"],
     description:
       "A graphic motion study built around fast cuts, hard edges, and a controlled visual rhythm.",
-    size: "wide",
+    size: "standard",
     poster: "/media/posters/kima-crops/ember.png",
     previewVideo: "/media/videos/zjglka.mp4",
+    videoAspect: "square",
   },
   {
     id: "fs",
@@ -163,7 +168,7 @@ export const projects: Project[] = [
     tools: ["After Effects"],
     description:
       "A short identity sequence shaped for fast recognition, sharp transitions, and repeat viewing.",
-    size: "wide",
+    size: "tall",
     poster: "/media/posters/kima-crops/pulse.png",
     previewVideo: "/media/videos/fs.mp4",
     fullVideo: "/media/videos/fs-full.mp4",
