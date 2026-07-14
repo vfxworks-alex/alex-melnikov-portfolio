@@ -13,6 +13,8 @@ export const profile = {
   stats: [
     { value: "4+", label: "Years of experience" },
     { value: "50+", label: "Client collaborations" },
+    { value: "90+", label: "Motion pieces shipped" },
+    { value: "4K", label: "Delivery-ready renders" },
   ],
 };
 
