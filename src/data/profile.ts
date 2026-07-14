@@ -11,10 +11,8 @@ export const profile = {
   about:
     "Motion designer and 3D artist working across animation, product films, interface motion, and graphic-led visual systems.",
   stats: [
-    { value: "4", label: "Years of experience" },
-    { value: "90+", label: "Motion pieces shipped" },
-    { value: "48", label: "Client collaborations" },
-    { value: "4K", label: "Delivery-ready renders" },
+    { value: "4+", label: "Years of experience" },
+    { value: "50+", label: "Client collaborations" },
   ],
 };
 
@@ -57,19 +55,31 @@ export const services = [
 ];
 
 export const stack = [
-  "After Effects",
-  "Cinema 4D",
-  "Photoshop",
-  "Illustrator",
-  "Figma",
+  { name: "After Effects", icon: "/media/icons/software/after-effects.svg" },
+  { name: "Cinema 4D", icon: "/media/icons/software/cinema-4d.svg" },
+  { name: "Photoshop", icon: "/media/icons/software/photoshop.svg" },
+  { name: "Illustrator", icon: "/media/icons/software/illustrator.svg" },
+  { name: "Figma", icon: "/media/icons/software/figma.svg" },
 ];
 
 export const experience = [
   {
-    company: "Independent practice",
+    company: "Pixel Point",
+    role: "3D Artist & Motion Designer",
+    years: "2025 — Present",
+    description: "Creating 3D and motion work for product, brand, and digital experiences.",
+  },
+  {
+    company: "MTS Digital",
+    role: "Motion Designer",
+    years: "2023 — 2025",
+    description: "Designed and animated visual content for digital products and communications.",
+  },
+  {
+    company: "Self-contractor",
     role: "Motion Designer & 3D Artist",
-    years: "4 years",
-    description: "Creating motion, 3D visuals, and graphic-led animation for digital projects.",
+    years: "Before 2023",
+    description: "Delivered motion design and 3D projects for independent clients and studios.",
   },
 ];
 

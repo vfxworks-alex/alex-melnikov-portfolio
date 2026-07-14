@@ -75,15 +75,15 @@ function Overview() {
           </div>
         </div>
 
-        <p className="intro-copy">
-          <strong>{profile.tagline}</strong>
-          <span> {profile.intro}</span>
-        </p>
-
         <div className="status-line">
           <span className="status-dot" aria-hidden="true" />
           {profile.availability}
         </div>
+
+        <p className="intro-copy">
+          <strong>{profile.tagline}</strong>
+          <span> {profile.intro}</span>
+        </p>
 
         <div className="intro-actions">
           <a className="primary-action" href={`mailto:${profile.email}`}>
@@ -119,7 +119,10 @@ function Overview() {
       <Section title="Stack.">
         <div className="tag-cloud" aria-label="Tools">
           {stack.map((tool) => (
-            <span key={tool}>{tool}</span>
+            <span key={tool.name}>
+              <img src={tool.icon} alt="" width="28" height="28" loading="lazy" decoding="async" />
+              {tool.name}
+            </span>
           ))}
         </div>
       </Section>
