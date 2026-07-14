@@ -143,11 +143,14 @@ function Overview() {
               <div className="avatar-token" aria-hidden="true">
                 {testimonial.avatar}
               </div>
-              <blockquote>{testimonial.quote}</blockquote>
-              <figcaption>
-                <strong>{testimonial.name}</strong>
-                <span>{testimonial.role}</span>
-              </figcaption>
+              <div className="testimonial-content">
+                <figcaption>
+                  <strong>{testimonial.name}</strong>
+                  <span aria-hidden="true">•</span>
+                  <span>{testimonial.role}</span>
+                </figcaption>
+                <blockquote>{testimonial.quote}</blockquote>
+              </div>
             </figure>
           ))}
         </div>
