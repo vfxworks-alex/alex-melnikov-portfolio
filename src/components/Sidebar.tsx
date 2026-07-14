@@ -1,7 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import type { Project } from "../data/projects";
 import {
-  awards,
   clients,
   contacts,
   experience,
@@ -124,14 +123,6 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Awards">
-        <ul className="award-list">
-          {awards.map((award) => (
-            <li key={award}>{award}</li>
-          ))}
-        </ul>
-      </Section>
-
       <Section title="Testimonials">
         <div className="testimonial-list">
           {testimonials.map((testimonial) => (
@@ -227,7 +218,7 @@ export function Sidebar({ selectedProject, onBack }: SidebarProps) {
       {selectedProject ? <ProjectDetails project={selectedProject} onBack={onBack} /> : <Overview />}
 
       <footer className="sidebar-footer">
-        <span>All rights reserved (c) 2025</span>
+        <span>© 2026 Alex Melnikov</span>
         <button type="button" aria-label="Scroll to top" onClick={scrollToSidebarTop}>
           Top
         </button>
