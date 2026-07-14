@@ -271,12 +271,12 @@ h3 {
   width: max-content;
   height: 100%;
   align-items: center;
-  animation: client-marquee 24s linear infinite;
+  animation: client-marquee 36s linear infinite;
   will-change: transform;
 }
 
 .client-grid {
-  --client-gap: clamp(1.6rem, 6cqi, 2.8rem);
+  --client-gap: 1.5rem;
   display: flex;
   flex: none;
   gap: var(--client-gap);
