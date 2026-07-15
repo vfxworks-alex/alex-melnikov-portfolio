@@ -2,10 +2,10 @@ export type Project = {
   id: string;
   title: string;
   category: string;
-  year: string;
   role: string;
   tools: string[];
   description: string;
+  credit?: string;
   size: "tall" | "wide" | "standard";
   poster: string;
   previewVideo?: string;
@@ -16,13 +16,14 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "final-render",
-    title: "Final Render",
-    category: "Motion Film",
-    year: "2026",
-    role: "Motion design, animation, compositing",
+    title: "Pixel Point: Flux 2 Explainer",
+    category: "Product Explainer",
+    role: "Motion design, animation, compositing — studio collaboration",
     tools: ["After Effects"],
     description:
-      "A cinematic motion piece shaped around dramatic pacing, layered transitions, and a polished final-grade finish.",
+      "A product explainer for Flux 2, shaped around cinematic pacing, layered transitions, and a polished final-grade finish.",
+    credit:
+      "My contribution was created in collaboration with other members of the Pixel Point studio team. All rights to the video production and design belong to Pixel Point.",
     size: "wide",
     poster: "/media/posters/projects/final-render.jpg",
     previewVideo: "/media/videos/final-render-preview.mp4",
@@ -31,13 +32,14 @@ export const projects: Project[] = [
   },
   {
     id: "comp-4",
-    title: "Comp 4",
-    category: "Motion Study",
-    year: "2026",
+    title: "Scale: Cortex",
+    category: "Product Explainer",
     role: "Design, animation, compositing",
     tools: ["After Effects"],
     description:
-      "An extended motion study exploring composition, rhythm, and visual progression across a widescreen sequence.",
+      "A product explainer for Scale Cortex, built around clear visual storytelling, controlled pacing, and a precise motion language.",
+    credit:
+      "My contribution was created in collaboration with the Scale team. All rights to the video production and design belong to Scale.",
     size: "wide",
     poster: "/media/posters/projects/comp-4.jpg",
     previewVideo: "/media/videos/comp-4-preview.mp4",
@@ -48,7 +50,6 @@ export const projects: Project[] = [
     id: "smart-speaker",
     title: "Smart Speaker",
     category: "3D Product Animation",
-    year: "2025",
     role: "Direction, animation, lighting",
     tools: ["After Effects", "Cinema 4D"],
     description:
@@ -62,7 +63,6 @@ export const projects: Project[] = [
     id: "keyboard",
     title: "Keyboard",
     category: "Product Animation",
-    year: "2023",
     role: "3D animation, compositing",
     tools: ["After Effects", "Cinema 4D"],
     description:
@@ -77,7 +77,6 @@ export const projects: Project[] = [
     id: "stash",
     title: "Stash",
     category: "Brand Motion",
-    year: "2023",
     role: "Motion design, adaptation",
     tools: ["After Effects", "Photoshop"],
     description:
@@ -90,9 +89,8 @@ export const projects: Project[] = [
   },
   {
     id: "ae-circle",
-    title: "AE Circle",
+    title: "Shape Play",
     category: "After Effects Loop",
-    year: "2022",
     role: "Animation, compositing",
     tools: ["After Effects"],
     description:
@@ -105,9 +103,8 @@ export const projects: Project[] = [
   },
   {
     id: "camera",
-    title: "Camera",
-    category: "Product Film",
-    year: "2025",
+    title: "CCTV",
+    category: "3D Branding",
     role: "Animation, lighting, edit",
     tools: ["After Effects", "Cinema 4D"],
     description:
@@ -121,7 +118,6 @@ export const projects: Project[] = [
     id: "button",
     title: "Button",
     category: "Micro Product Motion",
-    year: "2024",
     role: "Motion design, rendering",
     tools: ["Cinema 4D", "After Effects"],
     description:
@@ -135,7 +131,6 @@ export const projects: Project[] = [
     id: "blue",
     title: "Blue System",
     category: "Abstract Motion",
-    year: "2024",
     role: "Look development, animation",
     tools: ["After Effects", "Cinema 4D"],
     description:
@@ -147,9 +142,8 @@ export const projects: Project[] = [
   },
   {
     id: "zjglka",
-    title: "ZJGLKA",
+    title: "Lighter",
     category: "Kinetic Study",
-    year: "2023",
     role: "Design, animation",
     tools: ["After Effects", "Photoshop"],
     description:
@@ -161,9 +155,8 @@ export const projects: Project[] = [
   },
   {
     id: "fs",
-    title: "FS",
+    title: "4roll",
     category: "Motion Identity",
-    year: "2022",
     role: "Direction, animation",
     tools: ["After Effects"],
     description:
@@ -176,9 +169,8 @@ export const projects: Project[] = [
   },
   {
     id: "all-widgets",
-    title: "All Widgets",
+    title: "Widgets",
     category: "UI Motion",
-    year: "2026",
     role: "Design, animation, compositing",
     tools: ["After Effects", "Figma"],
     description:
@@ -191,9 +183,8 @@ export const projects: Project[] = [
   },
   {
     id: "fff",
-    title: "FFF",
+    title: "PixPop",
     category: "Vertical Motion Film",
-    year: "2025",
     role: "Design, animation, compositing",
     tools: ["After Effects"],
     description:

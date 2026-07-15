@@ -2,7 +2,7 @@ export const profile = {
   name: "Alex Melnikov",
   role: "Motion Designer & 3D Artist",
   availability: "Available for work · Bangkok time (UTC+7)",
-  email: "hello@vovamarlow.studio",
+  email: "vfxworks.alex@gmail.com",
   phone: "+1 929 555 0184",
   location: "Bangkok / Remote · UTC+7",
   avatar: "/media/avatar/vova.jpg",
@@ -12,9 +12,9 @@ export const profile = {
     "Motion designer and 3D artist working across animation, product films, interface motion, and graphic-led visual systems.",
   stats: [
     { value: "4+", label: "Years of experience" },
-    { value: "50+", label: "Client collaborations" },
-    { value: "90+", label: "Motion pieces shipped" },
-    { value: "4K", label: "Delivery-ready renders" },
+    { value: "10+", label: "Teams trust me with their motion" },
+    { value: "Pro", label: "High-end workstation workflow" },
+    { value: "4K", label: "Fast, delivery-ready rendering" },
   ],
 };
 
@@ -59,10 +59,14 @@ export const services = [
 export const stack = [
   { name: "After Effects", icon: "/media/icons/software/after-effects.svg" },
   { name: "Cinema 4D", icon: "/media/icons/software/cinema-4d.svg" },
-  { name: "Photoshop", icon: "/media/icons/software/photoshop.svg" },
-  { name: "Illustrator", icon: "/media/icons/software/illustrator.svg" },
   { name: "Figma", icon: "/media/icons/software/figma.svg" },
+  { name: "Rive", icon: "/media/icons/software/rive.svg" },
+  { name: "Codex", icon: "/media/icons/software/codex.svg" },
+  { name: "Three.js", icon: "/media/icons/software/three-js.svg" },
 ];
+
+export const stackDescription =
+  "I use AI-assisted coding to write custom shaders, build Three.js experiments, and turn motion ideas into interactive product systems.";
 
 export const experience = [
   {
@@ -87,18 +91,18 @@ export const experience = [
 
 export const testimonials = [
   {
-    name: "Mira Chen",
-    role: "Creative Director, Aura",
+    name: "Creative Mints",
+    role: "Graphic Designer",
     quote:
-      "Alex brought structure to a very abstract launch. The final film felt sharp, expensive, and effortless.",
-    avatar: "MC",
+      "Had the pleasure of working with Alex. Everything went smoothly, and I'm really happy with the final outcome",
+    avatar: "/media/avatar/creative-mints.jpg",
   },
   {
-    name: "Jon Bell",
-    role: "Founder, Orbit Labs",
+    name: "Michael Bogdanovich",
+    role: "Art Director, MTS Digital",
     quote:
-      "The motion system became part of our product language. It made the whole brand feel more confident.",
-    avatar: "JB",
+      "We worked closely with Alex to build a motion system for the product. He brought clarity, consistency, and a strong visual rhythm to every interaction.",
+    avatar: "/media/avatar/michael-bogdanovich.png",
   },
   {
     name: "Lea Novak",
@@ -110,10 +114,14 @@ export const testimonials = [
 ];
 
 export const contacts = [
-  { label: "Hello", value: "Book a motion review", href: "mailto:hello@vovamarlow.studio" },
-  { label: "Phone", value: "+1 929 555 0184", href: "tel:+19295550184" },
-  { label: "Twitter", value: "@vovamotion", href: "https://twitter.com" },
-  { label: "LinkedIn", value: "Alex Melnikov", href: "https://linkedin.com" },
-  { label: "Instagram", value: "@vova.marlow", href: "https://instagram.com" },
-  { label: "Email", value: "hello@vovamarlow.studio", href: "mailto:hello@vovamarlow.studio" },
+  {
+    label: "Email",
+    value: "vfxworks.alex@gmail.com",
+    href: "mailto:vfxworks.alex@gmail.com",
+  },
+  { label: "X", value: "@vfx_alex_", href: "https://x.com/vfx_alex_" },
+  { label: "Telegram", value: "@AlexMlnkv", href: "https://t.me/AlexMlnkv" },
 ];
+
+export const contactIntro =
+  "I'll gladly work on your project as well! Contact me at vfxworks.alex@gmail.com for project inquiries.";

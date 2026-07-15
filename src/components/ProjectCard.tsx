@@ -79,9 +79,7 @@ export function ProjectCard({ project, index, isSelected, onSelect }: ProjectCar
           <span className="media-sheen" aria-hidden="true" />
           <div className="project-caption">
             <span>{project.title}</span>
-            <span>
-              {project.category} / {project.year}
-            </span>
+            <span>{project.category}</span>
           </div>
         </div>
       </button>

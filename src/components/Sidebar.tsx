@@ -2,11 +2,13 @@ import { useRef, type ReactNode } from "react";
 import type { Project } from "../data/projects";
 import {
   clients,
+  contactIntro,
   contacts,
   experience,
   profile,
   services,
   stack,
+  stackDescription,
   testimonials,
 } from "../data/profile";
 
@@ -117,6 +119,7 @@ function Overview() {
       </Section>
 
       <Section title="Stack.">
+        <p className="stack-description">{stackDescription}</p>
         <div className="tag-cloud" aria-label="Tools">
           {stack.map((tool) => (
             <span key={tool.name}>
@@ -144,9 +147,21 @@ function Overview() {
         <div className="testimonial-list">
           {testimonials.map((testimonial) => (
             <figure key={testimonial.name}>
-              <div className="avatar-token" aria-hidden="true">
-                {testimonial.avatar}
-              </div>
+              {testimonial.avatar.startsWith("/") ? (
+                <img
+                  className="avatar-token"
+                  src={testimonial.avatar}
+                  alt=""
+                  width="42"
+                  height="42"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div className="avatar-token" aria-hidden="true">
+                  {testimonial.avatar}
+                </div>
+              )}
               <div className="testimonial-content">
                 <figcaption>
                   <strong>{testimonial.name}</strong>
@@ -161,6 +176,7 @@ function Overview() {
       </Section>
 
       <Section title="Reach out.">
+        <p className="reachout-copy">{contactIntro}</p>
         <div className="contact-list">
           {contacts.map((contact) => (
             <a href={contact.href} key={contact.label}>
@@ -186,10 +202,6 @@ function ProjectDetails({ project, onBack }: { project: Project; onBack: () => v
       <p className="project-lede">{project.description}</p>
 
       <dl className="project-meta">
-        <div>
-          <dt>Year</dt>
-          <dd>{project.year}</dd>
-        </div>
         <div>
           <dt>Role</dt>
           <dd>{project.role}</dd>
@@ -219,6 +231,8 @@ function ProjectDetails({ project, onBack }: { project: Project; onBack: () => v
           <img src={project.poster} alt={`${project.title} still frame`} />
         )}
       </div>
+
+      {project.credit ? <p className="project-credit">{project.credit}</p> : null}
     </section>
   );
 }
