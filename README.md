@@ -1,6 +1,6 @@
-# Motion Portfolio Preview
+# Alex Melnikov — Motion Designer & 3D Artist
 
-React/Vite motion portfolio preview with split desktop scrolling: profile/details on the left, real motion work grid on the right, and bundled local video assets.
+React/Vite showcase for Alex Melnikov with split desktop scrolling, profile and project details, a motion work grid, and bundled local video assets.
 
 ## Run locally
 

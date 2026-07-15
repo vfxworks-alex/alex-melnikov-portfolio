@@ -66,7 +66,7 @@ export const projects: Project[] = [
     role: "3D animation, compositing",
     tools: ["After Effects", "Cinema 4D"],
     description:
-      "A hardware-focused loop with macro surfaces, key travel, and rhythmic timing designed for a first-scroll portfolio hit.",
+      "A hardware-focused loop with macro surfaces, key travel, and rhythmic timing designed for an immediate visual impact.",
     size: "tall",
     poster: "/media/posters/kima-crops/zenith.png",
     previewVideo: "/media/videos/keyboard.mp4",
