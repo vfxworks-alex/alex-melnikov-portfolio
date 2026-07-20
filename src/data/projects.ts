@@ -55,7 +55,7 @@ export const projects: Project[] = [
     description:
       "A compact launch loop built around product scale, soft reflections, and a calm camera move that makes the object feel tangible",
     size: "wide",
-    poster: "/media/posters/kima-crops/pulse.png",
+    poster: "/media/posters/projects/video-frames/smart-speaker.jpg",
     previewVideo: "/media/videos/smart-speaker.mp4",
     videoAspect: "wide",
   },
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     description:
       "A hardware-focused loop with macro surfaces, key travel, and rhythmic timing designed for an immediate visual impact",
     size: "tall",
-    poster: "/media/posters/kima-crops/zenith.png",
+    poster: "/media/posters/projects/video-frames/keyboard.jpg",
     previewVideo: "/media/videos/keyboard.mp4",
     fullVideo: "/media/videos/keyboard-full.mp4",
     videoAspect: "portrait",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     description:
       "A compact brand animation package with bold timing, simple staging, and enough contrast to survive small placements",
     size: "tall",
-    poster: "/media/posters/kima-crops/scarlet.png",
+    poster: "/media/posters/projects/video-frames/stash.jpg",
     previewVideo: "/media/videos/stash.mp4",
     fullVideo: "/media/videos/stash-full.mp4",
     videoAspect: "portrait",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     description:
       "A clean circular motion experiment with loopable timing and simple high-contrast composition",
     size: "tall",
-    poster: "/media/posters/kima-crops/eclipse.png",
+    poster: "/media/posters/projects/video-frames/ae-circle.jpg",
     previewVideo: "/media/videos/ae-circle.mp4",
     fullVideo: "/media/videos/ae-circle-full.mp4",
     videoAspect: "portrait",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     description:
       "A clean product sequence focused on lens geometry, material contrast, and restrained motion for a premium hardware read",
     size: "standard",
-    poster: "/media/posters/kima-crops/nova.png",
+    poster: "/media/posters/projects/video-frames/camera.jpg",
     previewVideo: "/media/videos/camera.mp4",
     videoAspect: "square",
   },
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     description:
       "A short tactile study that sells click, pressure, and surface detail through timing rather than noise",
     size: "standard",
-    poster: "/media/posters/kima-crops/ember.png",
+    poster: "/media/posters/projects/video-frames/button.jpg",
     previewVideo: "/media/videos/button.mp4",
     videoAspect: "square",
   },
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     description:
       "A visual direction pass using blue light, graphic movement, and a simple loop structure for social and web placement",
     size: "standard",
-    poster: "/media/posters/kima-crops/eclipse.png",
+    poster: "/media/posters/projects/video-frames/blue.jpg",
     previewVideo: "/media/videos/blue.mp4",
     videoAspect: "square",
   },
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     description:
       "A graphic motion study built around fast cuts, hard edges, and a controlled visual rhythm",
     size: "standard",
-    poster: "/media/posters/kima-crops/ember.png",
+    poster: "/media/posters/projects/video-frames/zjglka.jpg",
     previewVideo: "/media/videos/zjglka.mp4",
     videoAspect: "square",
   },
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     description:
       "A short identity sequence shaped for fast recognition, sharp transitions, and repeat viewing",
     size: "tall",
-    poster: "/media/posters/kima-crops/pulse.png",
+    poster: "/media/posters/projects/video-frames/fs.jpg",
     previewVideo: "/media/videos/fs.mp4",
     fullVideo: "/media/videos/fs-full.mp4",
     videoAspect: "portrait",
