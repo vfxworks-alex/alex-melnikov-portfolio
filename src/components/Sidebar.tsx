@@ -1,5 +1,4 @@
 import { useRef, type ReactNode } from "react";
-import type { Project } from "../data/projects";
 import {
   clients,
   contactIntro,
@@ -12,11 +11,6 @@ import {
   testimonials,
 } from "../data/profile";
 
-type SidebarProps = {
-  selectedProject: Project | null;
-  onBack: () => void;
-};
-
 type SectionProps = {
   title: string;
   children: ReactNode;
@@ -25,10 +19,14 @@ type SectionProps = {
 const clientMarqueeCopies = [false, true] as const;
 
 function Section({ title, children }: SectionProps) {
-  const titleId = `${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}-title`;
+  const sectionSlug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const titleId = `${sectionSlug}-title`;
 
   return (
-    <section className="profile-section" aria-labelledby={titleId}>
+    <section
+      className={`profile-section profile-section--${sectionSlug}`}
+      aria-labelledby={titleId}
+    >
       <h2 id={titleId}>{title}</h2>
       {children}
     </section>
@@ -47,9 +45,15 @@ function LogoMarquee() {
               key={isDuplicate ? "duplicate" : "primary"}
             >
               {clients.map((client) => (
-                <span className="logo-word" key={client}>
-                  {client}
-                </span>
+                <img
+                  className="client-logo"
+                  src={client.logo}
+                  alt={isDuplicate ? "" : client.name}
+                  width="264"
+                  height="102"
+                  decoding="async"
+                  key={client.name}
+                />
               ))}
             </div>
           ))}
@@ -62,7 +66,7 @@ function LogoMarquee() {
 function Overview() {
   return (
     <>
-      <section className="intro-block">
+      <section className="intro-block" aria-label="About Alex">
         <div className="identity-row">
           <img
             className="profile-avatar"
@@ -77,37 +81,35 @@ function Overview() {
           </div>
         </div>
 
-        <div className="status-line">
-          <span className="status-dot" aria-hidden="true" />
-          {profile.availability}
+        <div className="intro-about">
+          <p className="about-copy">{profile.about}</p>
         </div>
 
-        <p className="intro-copy">
-          <strong>{profile.tagline}</strong>
-          <span> {profile.intro}</span>
-        </p>
-
-        <div className="intro-actions">
+        <div className="intro-cta">
           <a className="primary-action" href={`mailto:${profile.email}`}>
             Get in touch
           </a>
-          <LogoMarquee />
+
+          <div className="status-line">
+            <span className="status-dot" aria-hidden="true" />
+            {profile.availability}
+          </div>
+
+          <div className="stats-panel">
+            <dl className="stats-list">
+              {profile.stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt>{stat.value}</dt>
+                  <dd>{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
+            <LogoMarquee />
+          </div>
         </div>
       </section>
 
-      <Section title="About me.">
-        <p>{profile.about}</p>
-        <dl className="stats-list">
-          {profile.stats.map((stat) => (
-            <div key={stat.label}>
-              <dt>{stat.value}</dt>
-              <dd>{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
-      </Section>
-
-      <Section title="Services.">
+      <Section title="Services">
         <div className="service-list">
           {services.map((service) => (
             <article key={service.title}>
@@ -118,7 +120,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Stack.">
+      <Section title="Stack">
         <p className="stack-description">{stackDescription}</p>
         <div className="tag-cloud" aria-label="Tools">
           {stack.map((tool) => (
@@ -130,7 +132,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Experience.">
+      <Section title="Experience">
         <div className="timeline-list">
           {experience.map((item) => (
             <article key={`${item.company}-${item.years}`}>
@@ -143,7 +145,7 @@ function Overview() {
         </div>
       </Section>
 
-      <Section title="Testimonials.">
+      <Section title="Testimonials">
         <div className="testimonial-list">
           {testimonials.map((testimonial) => (
             <figure key={testimonial.name}>
@@ -168,14 +170,14 @@ function Overview() {
                   <span aria-hidden="true">•</span>
                   <span>{testimonial.role}</span>
                 </figcaption>
-                <blockquote>{testimonial.quote}</blockquote>
+                <blockquote>“{testimonial.quote}”</blockquote>
               </div>
             </figure>
           ))}
         </div>
       </Section>
 
-      <Section title="Reach out.">
+      <Section title="Reach out">
         <p className="reachout-copy">{contactIntro}</p>
         <div className="contact-list">
           {contacts.map((contact) => (
@@ -190,54 +192,7 @@ function Overview() {
   );
 }
 
-function ProjectDetails({ project, onBack }: { project: Project; onBack: () => void }) {
-  return (
-    <section className="project-details" aria-live="polite">
-      <button className="back-action" type="button" onClick={onBack}>
-        Back to overview
-      </button>
-
-      <p className="eyebrow">{project.category}</p>
-      <h2>{project.title}</h2>
-      <p className="project-lede">{project.description}</p>
-
-      <dl className="project-meta">
-        <div>
-          <dt>Role</dt>
-          <dd>{project.role}</dd>
-        </div>
-        <div>
-          <dt>Tools</dt>
-          <dd>{project.tools.join(", ")}</dd>
-        </div>
-      </dl>
-
-      <div
-        className={`project-still${project.videoAspect ? ` project-still--${project.videoAspect}-video` : ""}`}
-      >
-        {project.previewVideo ? (
-          <video
-            autoPlay
-            muted
-            playsInline
-            loop
-            controls
-            preload="metadata"
-            poster={project.poster}
-            src={project.fullVideo ?? project.previewVideo}
-            aria-label={`${project.title} full video`}
-          />
-        ) : (
-          <img src={project.poster} alt={`${project.title} still frame`} />
-        )}
-      </div>
-
-      {project.credit ? <p className="project-credit">{project.credit}</p> : null}
-    </section>
-  );
-}
-
-export function Sidebar({ selectedProject, onBack }: SidebarProps) {
+export function Sidebar() {
   const sidebarRef = useRef<HTMLElement | null>(null);
 
   const scrollToSidebarTop = () => {
@@ -249,11 +204,14 @@ export function Sidebar({ selectedProject, onBack }: SidebarProps) {
 
   return (
     <aside className="sidebar" aria-label="Profile and project information" ref={sidebarRef}>
-      {selectedProject ? <ProjectDetails project={selectedProject} onBack={onBack} /> : <Overview />}
+      <Overview />
 
       <footer className="sidebar-footer">
         <span>© 2026 Alex Melnikov</span>
         <button type="button" aria-label="Scroll to top" onClick={scrollToSidebarTop}>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 13V3M4 7l4-4 4 4" />
+          </svg>
           Top
         </button>
       </footer>
