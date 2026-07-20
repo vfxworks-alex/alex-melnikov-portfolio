@@ -64,7 +64,8 @@
   --spacing-work-grid: clamp(0.6rem, 0.9vw, 1rem);
 
   /* Sizing */
-  --size-site-max: 90rem;
+  --size-site-max: 100rem;
+  --size-sidebar-content-max: 30rem;
   --size-service-counter: 2rem;
   --size-client-logo: 2.5rem;
   --size-overlay-thumbnail: clamp(2.75rem, 3.25vw, 3.25rem);

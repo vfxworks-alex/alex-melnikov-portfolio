@@ -130,6 +130,11 @@ b {
   padding-bottom: 0;
 }
 
+.intro-block > *,
+.profile-section > * {
+  width: min(100%, var(--size-sidebar-content-max));
+}
+
 .identity-row {
   display: grid;
   grid-template-columns: 3.5rem minmax(0, 1fr);
