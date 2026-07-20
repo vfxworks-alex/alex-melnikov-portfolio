@@ -24,6 +24,7 @@ function Section({ title, children }: SectionProps) {
 
   return (
     <section
+      id={sectionSlug}
       className={`profile-section profile-section--${sectionSlug}`}
       aria-labelledby={titleId}
     >
@@ -86,7 +87,7 @@ function Overview() {
         </div>
 
         <div className="intro-cta">
-          <a className="primary-action" href={`mailto:${profile.email}`}>
+          <a className="primary-action" href="#reach-out">
             Get in touch
           </a>
 
@@ -181,9 +182,17 @@ function Overview() {
         <p className="reachout-copy">{contactIntro}</p>
         <div className="contact-list">
           {contacts.map((contact) => (
-            <a href={contact.href} key={contact.label}>
+            <a
+              href={contact.href}
+              key={contact.label}
+              target={contact.href.startsWith("http") ? "_blank" : undefined}
+              rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
+            >
               <span>{contact.label}</span>
               <strong>{contact.value}</strong>
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M4 12 12 4M6 4h6v6" />
+              </svg>
             </a>
           ))}
         </div>

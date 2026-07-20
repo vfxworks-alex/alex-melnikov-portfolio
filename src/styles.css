@@ -81,6 +81,7 @@ b {
   flex-direction: column;
   overflow-y: auto;
   overscroll-behavior: contain;
+  scroll-behavior: smooth;
   border-right: 1px solid var(--color-border);
   background: var(--color-background);
   container-type: inline-size;
@@ -358,6 +359,7 @@ h3 {
 }
 
 .profile-section {
+  scroll-margin-top: 1rem;
   padding-top: var(--spacing-section-content);
   padding-bottom: var(--spacing-section-content);
   border-top: 1px solid var(--color-border);
@@ -670,6 +672,7 @@ img.avatar-token {
 
 .contact-list {
   display: grid;
+  gap: 0.625rem;
 }
 
 .reachout-copy {
@@ -680,9 +683,19 @@ img.avatar-token {
 
 .contact-list a {
   display: grid;
-  grid-template-columns: minmax(4.25rem, 0.34fr) minmax(0, 1fr);
+  min-height: 3.5rem;
+  grid-template-columns: minmax(4.25rem, 0.34fr) minmax(0, 1fr) 1.5rem;
   gap: 0.85rem;
-  padding: 0.45rem 0;
+  align-items: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 1rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--color-background);
+  transition:
+    border-color 200ms ease,
+    background 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
 }
 
 .contact-list span {
@@ -694,6 +707,41 @@ img.avatar-token {
 .contact-list strong {
   font-size: var(--font-size-md);
   overflow-wrap: anywhere;
+}
+
+.contact-list svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  justify-self: end;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  transition: transform 200ms ease;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  border-color: var(--color-foreground);
+  background: var(--color-foreground);
+  color: var(--color-background);
+  transform: translateY(-2px);
+}
+
+.contact-list a:hover span,
+.contact-list a:focus-visible span {
+  color: inherit;
+}
+
+.contact-list a:hover svg,
+.contact-list a:focus-visible svg {
+  transform: translate(0.15rem, -0.15rem);
+}
+
+.contact-list a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 @container (max-width: 22rem) {
@@ -737,10 +785,23 @@ img.avatar-token {
     flex-direction: column;
   }
 
-  .contact-list a,
+  .contact-list a {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.28rem 0.75rem;
+  }
+
   .project-meta div {
     grid-template-columns: 1fr;
     gap: 0.28rem;
+  }
+
+  .contact-list a span {
+    grid-column: 1 / -1;
+  }
+
+  .contact-list a svg {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .testimonial-list figure {
@@ -1511,7 +1572,11 @@ img.avatar-token {
     grid-template-columns: 1fr;
   }
 
-  .contact-list a,
+  .contact-list a {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.3rem 0.75rem;
+  }
+
   .project-meta div {
     grid-template-columns: 1fr;
     gap: 0.3rem;
@@ -1519,6 +1584,10 @@ img.avatar-token {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    scroll-behavior: auto;
+  }
+
   .primary-action::before {
     animation: none !important;
     opacity: 0;
