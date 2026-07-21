@@ -104,7 +104,7 @@ export const testimonials = [
   },
   {
     name: "Susanna S.",
-    role: "Design Lead, VK ID",
+    role: "CPO, VK ID",
     quote: "Fast, thoughtful, and visually exact. Our team really appreciated your work!",
     avatar: "/media/avatar/susanna-s.png",
   },
