@@ -251,7 +251,8 @@ h3 {
     transform 240ms ease;
 }
 
-.primary-action::before {
+.primary-action::before,
+.contact-list a::before {
   position: absolute;
   z-index: 1;
   inset: calc(-1 * var(--border-action-shine));
@@ -287,7 +288,8 @@ h3 {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .primary-action:hover::before {
+  .primary-action:hover::before,
+  .contact-list a:hover::before {
     animation: action-border-shine-hover var(--motion-duration-action-shine-hover) linear both;
   }
 }
@@ -682,6 +684,7 @@ img.avatar-token {
 }
 
 .contact-list a {
+  position: relative;
   display: grid;
   min-height: 3.5rem;
   grid-template-columns: minmax(4.25rem, 0.34fr) minmax(0, 1fr) 1.5rem;
@@ -691,11 +694,12 @@ img.avatar-token {
   border-radius: 1rem;
   padding: 0.8rem 0.9rem;
   background: var(--color-background);
+  isolation: isolate;
   transition:
-    border-color 200ms ease,
-    background 200ms ease,
-    color 200ms ease,
-    transform 200ms ease;
+    border-color 240ms ease,
+    background 240ms ease,
+    color 240ms ease,
+    transform 240ms ease;
 }
 
 .contact-list span {
@@ -726,7 +730,7 @@ img.avatar-token {
   border-color: var(--color-foreground);
   background: var(--color-foreground);
   color: var(--color-background);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .contact-list a:hover span,
@@ -1588,7 +1592,8 @@ img.avatar-token {
     scroll-behavior: auto;
   }
 
-  .primary-action::before {
+  .primary-action::before,
+  .contact-list a::before {
     animation: none !important;
     opacity: 0;
   }
