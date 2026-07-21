@@ -103,11 +103,10 @@ export const testimonials = [
     avatar: "/media/avatar/michael-bogdanovich.png",
   },
   {
-    name: "Lea Novak",
-    role: "Producer, Field Unit",
-    quote:
-      "Fast, thoughtful, and visually exact. Every transition had a reason and every frame had taste",
-    avatar: "LN",
+    name: "Susanna S.",
+    role: "Design Lead, VK ID",
+    quote: "Fast, thoughtful, and visually exact. Our team really appreciated his work!",
+    avatar: "/media/avatar/susanna-s.png",
   },
 ];
 
