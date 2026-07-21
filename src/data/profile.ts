@@ -64,7 +64,7 @@ export const stack = [
 ];
 
 export const stackDescription =
-  "I use AI-assisted coding to write custom shaders, build Three.js experiments, and turn motion ideas into interactive product systems";
+  "After Effects and Cinema 4D are at the core of my work. I also use Midjourney and Kling for AI-powered image and video generation, with AI-assisted coding as an additional tool for creative experiments";
 
 export const experience = [
   {
